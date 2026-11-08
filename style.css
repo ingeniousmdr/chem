@@ -371,3 +371,33 @@ body.light .setting { color: #56645a; }
 @media (prefers-reduced-motion:reduce) {
   *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* Optional dark theme for the periodic table */
+body.dark {
+  color-scheme: dark;
+  --bg: #17231c;
+  --surface: #213128;
+  --surface-raised: #293a30;
+  --line: #3a4d40;
+  --text: #edf4ed;
+  --muted: #a7b6a9;
+  --accent: #9bd0a8;
+  --accent-dark: #b4dfbd;
+  --accent-soft: #2a4433;
+  background: var(--bg);
+  color: var(--text);
+}
+body.dark .site-header { background: rgba(23,35,28,.93); border-color: var(--line); }
+body.dark .nav-link { color: #b2c0b4; }
+body.dark .nav-link:hover,body.dark .nav-link.active { color: var(--accent); background: var(--accent-soft); border-color: var(--line); }
+body.dark .brand-copy small,body.dark .brand p,body.dark .subtitle,body.dark .table-foot { color: var(--muted); }
+body.dark .btn,body.dark .search,body.dark .toolbar select,body.dark .settings-panel,body.dark .detail { background: var(--surface); color: var(--text); border-color: var(--line); }
+body.dark .element { background: color-mix(in srgb,var(--family) 18%,#213128); color: var(--text); border-color: color-mix(in srgb,var(--family) 55%,#3a4d40); }
+body.dark .el-name,body.dark .mass,body.dark .atomic { color: #c1d0c2; }
+body.dark .legend-item,body.dark .info { background: var(--surface-raised); border-color: var(--line); color: var(--muted); }
+body.dark .big-tile { background: color-mix(in srgb,var(--family) 22%,#213128); }
+body.dark .big-tile .el-name,body.dark .detail-note,body.dark .detail-title p,body.dark .info span,body.dark .setting { color: var(--muted); }
+body.dark .close { background: var(--surface-raised); color: var(--text); border-color: var(--line); }
+body.dark .overlay { background: rgba(5,12,7,.72); }
+body.dark .group-label,body.dark .period-label,body.dark .series-label { color: #9aaa9d; }
+body.dark kbd { color: var(--text); border-color: var(--line); }
