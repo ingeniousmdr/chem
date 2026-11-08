@@ -1,68 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080e1c">
-  <meta name="description"
-    content="A student-friendly chemistry learning hub with an interactive periodic table and chemistry calculator.">
-  <title>Chemistry Lab | Student Learning Hub</title>
+  <meta name="theme-color" content="#28684f">
+  <meta name="description" content="A practical chemistry study space with an interactive periodic table and chemistry calculator.">
+  <title>Chemistry Lab — Learn chemistry by doing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <header class="site-header">
     <nav class="site-nav" aria-label="Main navigation">
       <a class="site-brand" href="index.html" aria-label="Chemistry Lab home">
         <span class="brand-symbol">C<span>·</span></span>
-        <span class="brand-copy"><strong>Chemistry Lab</strong><small>LEARN · EXPLORE · DISCOVER</small></span>
+        <span class="brand-copy"><strong>Chemistry Lab</strong><small>CHEMISTRY, MADE CLEAR</small></span>
       </a>
-      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"
-        aria-controls="primaryNav">
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primaryNav">
         <span></span><span></span><span></span>
       </button>
       <div class="nav-links" id="primaryNav">
         <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-        <a class="nav-link " href="pt.html">Periodic Table</a>
-        <a class="nav-link " href="chemcalc.html">ChemCalc</a>
-        <a class="nav-link " href="Brain Fog Reset — Stop Overthinking & Reduce Mental Fatigue ｜ 40Hz Gamma [O8P82HdjSN4].mp3" download="relax">song</a>
+        <a class="nav-link" href="pt.html">Periodic Table</a>
+        <a class="nav-link" href="chemcalc.html">ChemCalc</a>
       </div>
     </nav>
   </header>
+
   <main class="page-wrap">
     <section class="home-hero">
-      <span class="page-kicker">Your chemistry learning space</span>
-      <h1>Understand chemistry.<br><span>One discovery at a time.</span></h1>
-      <p>Explore the elements, practise important calculations and build confidence in chemistry with simple,
-        interactive study tools.</p>
+      <span class="page-kicker">A better way to revise chemistry</span>
+      <h1>Make sense of chemistry.<br><span>One topic at a time.</span></h1>
+      <p>Look up elements, check their properties and practise the calculations you meet in class. No complicated menus — just useful tools for learning.</p>
       <div class="hero-actions">
-        <a class="action-link action-primary" href="pt.html">Explore periodic table <span>↗</span></a>
-        <a class="action-link action-secondary" href="chemcalc.html">Open ChemCalc <span>→</span></a>
+        <a class="action-link action-primary" href="pt.html">Explore the elements <span aria-hidden="true">↗</span></a>
+        <a class="action-link action-secondary" href="chemcalc.html">Open ChemCalc <span aria-hidden="true">→</span></a>
       </div>
     </section>
+
     <section class="section-intro">
-      <h2>Your chemistry toolkit</h2>
-      <p>Choose a tool and start learning at your own pace.</p>
+      <h2>Pick a tool and get started</h2>
+      <p>Made for quick revision, homework practice and curious questions.</p>
     </section>
-    <section class="tool-grid">
+
+    <section class="tool-grid" aria-label="Chemistry learning tools">
       <a class="tool-card" href="pt.html">
-        <span class="tool-icon">⌬</span>
-        <h3>Interactive Periodic Table</h3>
-        <p>Explore all 118 elements, discover their properties and learn how the periodic table is organised.</p>
-        <span class="card-arrow">Explore elements <span>↗</span></span>
+        <span class="tool-icon" aria-hidden="true">⌬</span>
+        <h3>Periodic Table</h3>
+        <p>Search all 118 elements by name, symbol or atomic number. Open an element to see its group, period, mass and family.</p>
+        <span class="card-arrow">Browse elements <span aria-hidden="true">↗</span></span>
       </a>
       <a class="tool-card" href="chemcalc.html">
-        <span class="tool-icon">ƒ</span>
+        <span class="tool-icon" aria-hidden="true">ƒ</span>
         <h3>ChemCalc</h3>
-        <p>Calculate mass, moles, gas volume and number of particles with clear formulas and useful reference constants.
-        </p>
-        <span class="card-arrow">Start calculating <span>↗</span></span>
+        <p>Work out mass, moles, gas volume and number of particles. Choose a calculation and follow the formula with your values.</p>
+        <span class="card-arrow">Try a calculation <span aria-hidden="true">↗</span></span>
       </a>
     </section>
   </main>
-  <footer class="site-footer">CHEMISTRY LAB · MADE FOR CURIOUS STUDENTS · 2026</footer>
+
+  <footer class="site-footer">CHEMISTRY LAB · A SIMPLE SPACE TO LEARN AND PRACTISE</footer>
   <script src="site.js" defer></script>
 </body>
-
 </html>
