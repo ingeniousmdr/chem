@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChemCalc | Chemistry Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class="site-brand" href="index.html" aria-label="Chemistry Lab home">
+      <span class="brand-symbol">C<span>·</span></span>
+      <span class="brand-copy"><strong>Chemistry Lab</strong><small>LEARN · EXPLORE · DISCOVER</small></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primaryNav">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="primaryNav">
+      <a class="nav-link " href="index.html">Home</a>
+      <a class="nav-link " href="pt.html">Periodic Table</a>
+      <a class="nav-link active" aria-current="page" href="chemcalc.html">ChemCalc</a>
+    </div>
+  </nav>
+</header>
+<main class="container">
+
+        <section class="intro">
+            <span class="eyebrow">CHEMISTRY TOOLKIT</span>
+            <h1>Chemistry <span>Calculator.</span></h1>
+            <p>Calculate mass, moles, gas volume and number of particles with ease.</p>
+        </section>
+
+        <section class="calculator">
+
+            <div class="section-heading">
+                <h2>Calculation</h2>
+                <span class="step">01 / SELECT MODE</span>
+            </div>
+
+            <div class="mode-grid">
+                <button class="mode active" data-mode="mass">
+                    <span>⚖</span>
+                    <strong>Mass</strong>
+                    <small>Calculate mass</small>
+                </button>
+
+                <button class="mode" data-mode="volume">
+                    <span>◉</span>
+                    <strong>Volume</strong>
+                    <small>Calculate gas volume</small>
+                </button>
+
+                <button class="mode" data-mode="particles">
+                    <span>✣</span>
+                    <strong>Particles</strong>
+                    <small>Count particles</small>
+                </button>
+
+                <button class="mode" data-mode="moles">
+                    <span>n</span>
+                    <strong>Moles</strong>
+                    <small>Calculate moles</small>
+                </button>
+            </div>
+
+            <div class="section-heading input-heading">
+                <h2>Input values</h2>
+                <span class="step">02 / ENTER DATA</span>
+            </div>
+
+            <div id="inputs" class="inputs">
+                <div class="field">
+                    <label for="mol">Number of moles (mol)</label>
+                    <input type="number" id="mol" placeholder="e.g. 2" step="any">
+                </div>
+
+                <div class="field">
+                    <label for="molarMass">Molar mass (g/mol)</label>
+                    <input type="number" id="molarMass" placeholder="e.g. 18" step="any">
+                </div>
+            </div>
+
+            <div id="conditionField" class="field condition-field">
+                <label for="condition">Gas condition</label>
+                <select id="condition">
+                    <option value="22.4">STP (22.4 L/mol)</option>
+                    <option value="24">Room temperature (24 L/mol)</option>
+                </select>
+            </div>
+
+            <button id="calculateBtn" class="calculate-btn">
+                Calculate result <span>→</span>
+            </button>
+
+            <div id="error" class="error" role="alert"></div>
+
+            <section class="result" id="result">
+                <div class="result-top">
+                    <span>CALCULATION RESULT</span>
+                    <span class="result-indicator">● READY</span>
+                </div>
+
+                <p class="result-label">Your answer will appear here</p>
+                <h2 id="resultValue">---</h2>
+                <p id="resultUnit" class="result-unit">Select a calculation to begin.</p>
+                <div id="formula" class="formula">Formula: ---</div>
+            </section>
+
+        </section>
+
+        <section class="reference">
+            <div class="section-heading">
+                <h2>Reference constants</h2>
+                <span class="step">QUICK REFERENCE</span>
+            </div>
+
+            <div class="reference-grid">
+                <div class="reference-card">
+                    <span>STP</span>
+                    <strong>22.4</strong>
+                    <small>L/mol</small>
+                </div>
+
+                <div class="reference-card">
+                    <span>ROOM TEMP.</span>
+                    <strong>24</strong>
+                    <small>L/mol</small>
+                </div>
+
+                <div class="reference-card">
+                    <span>AVOGADRO</span>
+                    <strong>6.02 × 10²³</strong>
+                    <small>mol⁻¹</small>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>CHEMCALC © 2026 · Built for chemistry students.</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+  <script src="site.js" defer></script>
+</body>
+</html>
