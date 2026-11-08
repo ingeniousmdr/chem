@@ -336,7 +336,7 @@ body.light .info { background: #f8faf6; border-color: var(--line); }
 body.light .setting { color: #56645a; }
 
 /* Responsive layout */
-@media (max-width:760px) {
+@media (max-width:900px) {
   .site-header { padding: 8px 15px; }
   .nav-toggle { display: block; }
   .site-nav { flex-wrap: wrap; }
@@ -465,4 +465,104 @@ body.dark .tips-note { background: #3a3327; border-color: #b98b50; color: #e5d4b
   .tips-hero h1 { letter-spacing: -1.5px; }
   .tips-section-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
   .topic-tip-grid,.answer-grid,.revision-checklist { grid-template-columns: 1fr; }
+}
+
+
+/* Cross-device refinements: Android, iOS, phones and tablets */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { overflow-x: hidden; }
+.site-header {
+  padding-left: max(15px, env(safe-area-inset-left));
+  padding-right: max(15px, env(safe-area-inset-right));
+}
+button, a, input, select { touch-action: manipulation; }
+button, .nav-link, .action-link { -webkit-tap-highlight-color: transparent; }
+.table-shell {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+.table-shell:focus-within { outline-offset: 2px; }
+.overlay {
+  padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right))
+    max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+}
+.detail {
+  max-height: 90vh;
+  max-height: 90dvh;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+@media (max-width: 900px) {
+  .site-nav { gap: 12px; }
+  .nav-toggle { flex: 0 0 44px; min-width: 44px; min-height: 44px; }
+  .nav-link { min-height: 44px; }
+  .home-hero { padding: clamp(25px,5vw,42px); }
+  .tool-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .tips-page { width: min(100% - 30px, 760px); }
+  .app { padding-top: 20px; }
+  .toolbar { align-items: stretch; }
+  .search-wrap { min-width: min(100%,240px); }
+}
+@media (max-width: 760px) {
+  .topbar { align-items: flex-start; flex-direction: column; }
+  .top-actions { width: 100%; }
+  .toolbar .search-wrap { flex: 1 1 100%; max-width: none; }
+  .toolbar select { flex: 1 1 180px; min-height: 44px; }
+  .toolbar .btn { min-height: 44px; }
+  .table-foot { line-height: 1.7; }
+  .detail { width: 100%; }
+}
+@media (max-width: 600px) {
+  .page-wrap { width: calc(100% - 28px); margin: 25px auto 42px; }
+  .home-hero { padding: 25px 20px; border-radius: 18px; }
+  .home-hero h1 { font-size: clamp(34px,9vw,46px); letter-spacing: -1.6px; }
+  .home-hero p { font-size: 14px; }
+  .hero-actions { align-items: stretch; flex-direction: column; }
+  .action-link { width: 100%; min-height: 48px; }
+  .tool-grid { grid-template-columns: 1fr; gap: 11px; }
+  .tool-card { min-height: 0; padding: 20px; }
+  .tips-hero { padding: 25px 20px; border-radius: 18px; }
+  .tips-hero h1 { font-size: clamp(34px,9vw,46px); }
+  .tips-hero > p { font-size: 13px; }
+  .study-steps { grid-template-columns: 1fr 1fr; }
+  .topic-tip-grid,.answer-grid,.revision-checklist { grid-template-columns: 1fr; }
+  .tips-section { margin-top: 32px; }
+  .tips-section-heading > p { font-size: 12px; }
+  .container { width: 100%; }
+  .intro h1 { font-size: clamp(30px,8vw,40px); }
+  .calculator,.reference { border-radius: 15px; }
+  .mode { min-height: 104px; padding: 12px 10px; }
+  .mode strong { display: block; }
+  .mode small { font-size: 10px; }
+  .section-heading { align-items: flex-start; gap: 8px; }
+  .step { text-align: right; line-height: 1.5; }
+  .field input,.field select,.search,.toolbar select {
+    min-height: 48px;
+    font-size: 16px; /* Prevents automatic input zoom in iOS Safari */
+  }
+  .calculate-btn { min-height: 48px; width: 100%; }
+  .result { overflow-wrap: anywhere; }
+  .reference-card { min-width: 0; }
+  .site-footer { padding-bottom: max(22px, env(safe-area-inset-bottom)); }
+}
+@media (max-width: 420px) {
+  .brand-copy strong { font-size: 14px; }
+  .brand-copy small { font-size: 7px; letter-spacing: .9px; }
+  .study-steps { grid-template-columns: 1fr; }
+  .tips-hero-meta { gap: 6px; }
+  .tips-hero-meta span { font-size: 8px; }
+  .calculator,.reference { padding: 15px; }
+  .mode-grid { gap: 7px; }
+  .mode { min-height: 98px; }
+  .top-actions .btn { flex: 1 1 auto; min-height: 44px; }
+  .stats { flex-wrap: wrap; }
+  .detail-main { align-items: flex-start; }
+}
+@media (orientation: landscape) and (max-height: 500px) {
+  .site-header { position: relative; }
+  .overlay { align-items: start; overflow-y: auto; }
+  .detail { max-height: none; }
 }
