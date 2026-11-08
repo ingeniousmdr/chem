@@ -51,11 +51,11 @@
     document.getElementById('search').addEventListener('input', applyFilter); filter.addEventListener('change', applyFilter);
     document.getElementById('clearBtn').addEventListener('click', () => { document.getElementById('search').value = ''; filter.value = 'all'; applyFilter() });
     const panel = document.getElementById('settingsPanel'); document.getElementById('settingsBtn').addEventListener('click', () => panel.classList.toggle('open')); document.getElementById('doneSettings').addEventListener('click', () => panel.classList.remove('open'));
-    document.getElementById('themeBtn').addEventListener('click', () => document.body.classList.toggle('light'));
+    document.getElementById('themeBtn').addEventListener('click', () => document.body.classList.toggle('dark'));
     const root = document.documentElement;
     document.getElementById('accentPicker').addEventListener('input', e => root.style.setProperty('--accent', e.target.value));
     document.getElementById('tileRange').addEventListener('input', e => root.style.setProperty('--tile-size', `clamp(38px,${e.target.value / 12}vw,${e.target.value}px)`));
     document.getElementById('gapRange').addEventListener('input', e => root.style.setProperty('--tile-gap', e.target.value + 'px'));
     document.getElementById('speedRange').addEventListener('input', e => root.style.setProperty('--anim-speed', e.target.value + 'ms'));
-    document.getElementById('resetSettings').addEventListener('click', () => { document.getElementById('accentPicker').value = '#54d8ff'; document.getElementById('tileRange').value = 58; document.getElementById('gapRange').value = 5; document.getElementById('speedRange').value = 700; root.style.setProperty('--accent', '#54d8ff'); root.style.setProperty('--tile-size', 'clamp(42px,4.65vw,67px)'); root.style.setProperty('--tile-gap', '5px'); root.style.setProperty('--anim-speed', '700ms') });
+    document.getElementById('resetSettings').addEventListener('click', () => { document.getElementById('accentPicker').value = '#28684f'; document.getElementById('tileRange').value = 58; document.getElementById('gapRange').value = 5; document.getElementById('speedRange').value = 700; root.style.setProperty('--accent', '#28684f'); root.style.setProperty('--tile-size', 'clamp(42px,4.65vw,67px)'); root.style.setProperty('--tile-gap', '5px'); root.style.setProperty('--anim-speed', '700ms') });
   
