@@ -501,7 +501,7 @@ button, .nav-link, .action-link { -webkit-tap-highlight-color: transparent; }
   .nav-link { min-height: 44px; }
   .home-hero { padding: clamp(25px,5vw,42px); }
   .tool-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-  .tips-page { width: min(100% - 30px, 760px); }
+  .tips-page { width: min(calc(100% - 30px), 760px); }
   .app { padding-top: 20px; }
   .toolbar { align-items: stretch; }
   .search-wrap { min-width: min(100%,240px); }
