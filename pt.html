@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#28684f">
-  <meta name="description" content="Search and explore all 118 chemical elements with a clear, interactive periodic table.">\n  <title>Periodic Table — Chemistry Lab</title>
+  <meta name="description" content="Search and explore all 118 chemical elements with a clear, interactive periodic table.">
+  <title>Periodic Table — Chemistry Lab</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 <header class="site-header">
   <nav class="site-nav" aria-label="Main navigation">
@@ -20,9 +19,10 @@
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" id="primaryNav">
-      <a class="nav-link " href="index.html">Home</a>
+      <a class="nav-link" href="index.html">Home</a>
       <a class="nav-link active" aria-current="page" href="pt.html">Periodic Table</a>
-      <a class="nav-link " href="chemcalc.html">ChemCalc</a>
+      <a class="nav-link" href="chemcalc.html">ChemCalc</a>
+      <a class="nav-link" href="tips.html">Study Guide</a>
     </div>
   </nav>
 </header>
@@ -30,84 +30,48 @@
     <header class="topbar">
       <div class="brand">
         <div class="brand-mark">P</div>
-        <div>
-          <h1>ELEMENT EXPLORER<span style="color:var(--accent)">.</span></h1>
-          <p>Find an element · 01—118</p>
-        </div>
+        <div><h1>ELEMENT EXPLORER<span style="color:var(--accent)">.</span></h1><p>Find an element · 01—118</p></div>
       </div>
-      <div class="top-actions"><button class="btn" id="themeBtn">◐ Theme</button><button class="btn" id="settingsBtn">⚙
-          Customise</button></div>
+      <div class="top-actions"><button class="btn" id="themeBtn">◐ Theme</button><button class="btn" id="settingsBtn">⚙ Customise</button></div>
     </header>
     <section class="hero">
-      <div>
-        <div class="eyebrow">The language of matter</div>
-        <h2>Periodic Table</h2>
-        <p class="subtitle">Explore the building blocks of the universe. Select any element to uncover its properties.
-        </p>
-      </div>
-      <div class="stats">
-        <div class="stat"><strong>118</strong><span>Elements</span></div>
-        <div class="stat"><strong>18</strong><span>Groups</span></div>
-        <div class="stat"><strong>7</strong><span>Periods</span></div>
-      </div>
+      <div><div class="eyebrow">The language of matter</div><h2>Periodic Table</h2><p class="subtitle">Explore the building blocks of the universe. Select any element to uncover its properties.</p></div>
+      <div class="stats"><div class="stat"><strong>118</strong><span>Elements</span></div><div class="stat"><strong>18</strong><span>Groups</span></div><div class="stat"><strong>7</strong><span>Periods</span></div></div>
     </section>
     <div class="toolbar">
-      <div class="search-wrap"><span>⌕</span><input class="search" id="search" type="search"
-          placeholder="Search name, symbol or atomic number…"></div>
-      <select id="categoryFilter" aria-label="Filter by category">
-        <option value="all">All element families</option>
-      </select>
+      <div class="search-wrap"><span>⌕</span><input class="search" id="search" type="search" placeholder="Search name, symbol or atomic number…"></div>
+      <select id="categoryFilter" aria-label="Filter by category"><option value="all">All element families</option></select>
       <button class="btn" id="clearBtn">Clear search</button>
     </div>
     <div class="legend" id="legend"></div>
     <div class="table-shell">
       <div class="group-header" id="groupHeader"></div>
       <div class="periodic-grid" id="mainGrid"></div>
-      <div class="series-label">Lanthanides · 4f series</div>
-      <div class="series" id="lanthGrid"></div>
-      <div class="series-label">Actinides · 5f series</div>
-      <div class="series" id="actGrid"></div>
+      <div class="series-label">Lanthanides · 4f series</div><div class="series" id="lanthGrid"></div>
+      <div class="series-label">Actinides · 5f series</div><div class="series" id="actGrid"></div>
     </div>
     <div class="empty" id="empty">No elements match your search.</div>
-    <div class="table-foot"><span>Standard 18-group IUPAC arrangement · Detached f-block shown below</span><span>Tip:
-        press <kbd>Esc</kbd> to close an element profile</span></div>
+    <div class="table-foot"><span>Standard 18-group IUPAC arrangement · Detached f-block shown below</span><span>Tip: press <kbd>Esc</kbd> to close an element profile</span></div>
   </div>
-
   <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Element details">
     <article class="detail" id="detail">
-      <div class="detail-head">
-        <div class="detail-kicker">Element profile / <span id="detailNumber">001</span></div><button class="close"
-          id="closeDetail" aria-label="Close">×</button>
-      </div>
+      <div class="detail-head"><div class="detail-kicker">Element profile / <span id="detailNumber">001</span></div><button class="close" id="closeDetail" aria-label="Close">×</button></div>
       <div class="detail-main">
-        <div class="big-tile" id="bigTile"><span class="atomic" id="dAtomic"></span><span class="symbol"
-            id="dSymbol"></span><span class="el-name" id="dName"></span><span class="mass" id="dMass"></span></div>
-        <div class="detail-title">
-          <h3 id="dTitle"></h3>
-          <p id="dSubtitle"></p><span class="pill" id="dCategory"></span>
-        </div>
+        <div class="big-tile" id="bigTile"><span class="atomic" id="dAtomic"></span><span class="symbol" id="dSymbol"></span><span class="el-name" id="dName"></span><span class="mass" id="dMass"></span></div>
+        <div class="detail-title"><h3 id="dTitle"></h3><p id="dSubtitle"></p><span class="pill" id="dCategory"></span></div>
       </div>
-      <div class="info-grid" id="infoGrid"></div>
-      <p class="detail-note" id="dNote"></p>
+      <div class="info-grid" id="infoGrid"></div><p class="detail-note" id="dNote"></p>
     </article>
   </div>
-
   <aside class="settings-panel" id="settingsPanel">
     <h3>Appearance settings</h3>
-    <div class="setting"><label for="accentPicker">Interface accent</label><input type="color" id="accentPicker"
-        value="#28684f"></div>
-    <div class="setting"><label for="tileRange">Element tile size</label><input type="range" id="tileRange" min="38"
-        max="76" value="58"></div>
-    <div class="setting"><label for="gapRange">Tile spacing</label><input type="range" id="gapRange" min="2" max="10"
-        value="5"></div>
-    <div class="setting"><label for="speedRange">Zoom animation speed</label><input type="range" id="speedRange"
-        min="300" max="1400" step="50" value="700"></div>
-    <div class="settings-actions"><button class="btn" id="resetSettings">Reset defaults</button><button class="btn"
-        id="doneSettings">Done</button></div>
+    <div class="setting"><label for="accentPicker">Interface accent</label><input type="color" id="accentPicker" value="#28684f"></div>
+    <div class="setting"><label for="tileRange">Element tile size</label><input type="range" id="tileRange" min="38" max="76" value="58"></div>
+    <div class="setting"><label for="gapRange">Tile spacing</label><input type="range" id="gapRange" min="2" max="10" value="5"></div>
+    <div class="setting"><label for="speedRange">Zoom animation speed</label><input type="range" id="speedRange" min="300" max="1400" step="50" value="700"></div>
+    <div class="settings-actions"><button class="btn" id="resetSettings">Reset defaults</button><button class="btn" id="doneSettings">Done</button></div>
   </aside>
-
   <script src="periodic.js" defer></script>
   <script src="site.js" defer></script>
 </body>
-
 </html>
